@@ -4,7 +4,5 @@ module.exports = {
     env: {
         "NODE_ENV": "production",
     },
-    interpreter: 'bun',
-    exec_mode: 'cluster',
-    instances: 2,
+    interpreter: 'bun'
 }
