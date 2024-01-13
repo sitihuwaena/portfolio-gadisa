@@ -4,6 +4,7 @@ module.exports = {
         script: "bun run start",
         env: {
             "NODE_ENV": "production",
-        }
+        },
+        interpreter: 'bun'
     }]
 }
