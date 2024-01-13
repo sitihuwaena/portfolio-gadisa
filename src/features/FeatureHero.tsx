@@ -42,7 +42,7 @@ export default function FeatureHero({ source }: {
     }
 
     return (
-        <section className="container mx-auto px-8 md:px-16">
+        <section className="container mx-auto px-6 md:px-16">
             <div className="w-full flex md:items-center h-[calc(100vh-8rem)] md:h-[calc(100vh-6rem)]">
                 <div className="flex flex-col-reverse md:flex-row justify-end pt-[8vh] md:pt-0 md:justify-around w-full md:space-x-8">
                     <div className="flex flex-col justify-center md:px-8 font-poppins">

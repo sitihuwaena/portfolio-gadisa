@@ -48,7 +48,7 @@ export default async function ProjectDetail({ params }: { params: { slug: string
                 <meta property="og:image:height" content="256" />
             </Head>
             <section className="relative w-full py-10">
-                <div className="container relative mx-auto font-poppins px-8 space-y-8 md:px-16">
+                <div className="container relative mx-auto font-poppins px-6 space-y-8 md:px-16">
                     <div className="w-full relative grid h-[24rem] grid-cols-1 lg:grid-cols-3 gap-6">
                         <div className="relative h-[12rem] md:h-[24rem] w-full bg-white lg:col-span-2 drop-shadow-md rounded-lg overflow-hidden">
                             <Image className="w-full h-full object-contain md:object-cover" layout="fill" 
@@ -114,7 +114,7 @@ export default async function ProjectDetail({ params }: { params: { slug: string
                             </div>
                             <div className="bg-gray-50 rounded-lg py-2 px-4">
                                 <div className="font-semibold">Live Preview</div>
-                                <div className="text-sm text-secondary">
+                                <div className="text-sm text-secondary overflow-hidden">
                                     {
                                         data.attributes.live_preview ? (
                                             <a href={data.attributes.live_preview} target="_blank">
@@ -138,7 +138,7 @@ export default async function ProjectDetail({ params }: { params: { slug: string
                             </div>
                         </div>
                     </div>
-                    <div className="space-y-4 relative py-64 md:py-[29rem] lg:py-0">
+                    <div className="space-y-4 relative py-72 md:py-[29rem] lg:py-0">
                         <div className="space-y-1">
                             <h2 className="text-xl md:text-2xl font-poppins-semi-bold text-gray-600">
                                 {data.attributes.title}

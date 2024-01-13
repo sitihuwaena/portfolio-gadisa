@@ -43,7 +43,7 @@ export default async function Project() {
         <meta property="og:image:height" content="256"/>
             </Head>
             <section className="w-full py-10">
-                <div className="container mx-auto font-poppins px-8 md:px-16">
+                <div className="container mx-auto font-poppins px-6 md:px-16">
                     <div className="space-y-12">
                         <div className="space-y-4">
                             <h2 className="text-2xl md:text-3xl font-poppins-semi-bold text-gray-600 text-center">

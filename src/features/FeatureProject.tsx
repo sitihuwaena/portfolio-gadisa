@@ -22,7 +22,7 @@ export default function FeatureProject({ source }: {
 
     return (
         <section className="w-full bg-white py-16">
-            <div className="container mx-auto space-y-4 px-8 md:px-16">
+            <div className="container mx-auto space-y-4 px-6 md:px-16">
                 <h2 className="text-2xl md:text-3xl font-poppins-semi-bold text-gray-600 text-center">
                     {source.title}
                 </h2>

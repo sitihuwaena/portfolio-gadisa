@@ -45,7 +45,7 @@ export default async function About() {
                 <meta property="og:image:height" content="256" />
             </Head>
             <section className="w-full py-10">
-                <div className="container mx-auto font-poppins px-8 md:px-16">
+                <div className="container mx-auto font-poppins px-6 md:px-16">
                     <div className="max-w-2xl space-y-16">
                         <FeatureAboutMe source={data.attributes} />
                         <FeatureWorkExperiences />
