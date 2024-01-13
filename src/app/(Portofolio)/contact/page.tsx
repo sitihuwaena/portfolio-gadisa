@@ -16,6 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
     })
 
     return {
+        title: data.attributes.meta.title,
         description: data.attributes.meta.meta_description,
         twitter: {
           title: data.attributes.meta.title,

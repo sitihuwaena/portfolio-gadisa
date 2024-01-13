@@ -26,9 +26,7 @@ export const metadata: Metadata = {
     url: urlSite
   },
   creator: myName,
-  publisher: myName,
-  title: myName,
-  description: 'Experienced Frontend Developer with 5 years of experience in the information technology and services industry, both as a Freelancer and within an Agency setting. A quick learner who thrives on acquiring new knowledge and staying updated with the latest technology trends. I am confident that my skills and experience will be valuable in assisting you with your projects.',
+  publisher: myName
 }
 
 export default function RootLayout({
