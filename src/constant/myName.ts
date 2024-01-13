@@ -1,0 +1,1 @@
+export const myName = "Choirul Affan Adi Putra"
