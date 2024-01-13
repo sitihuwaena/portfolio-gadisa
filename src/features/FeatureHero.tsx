@@ -14,7 +14,7 @@ export default function FeatureHero({ source }: {
     ]
     const [renderText, setRenderText] = useState(true)
     const [currentPointer, setCurrentPointer] = useState(0)
-    const fullPath = process.env.NEXT_PUBLIC_API_URL + source.photo_profile.data.attributes.url
+    const fullPath = process.env.NEXT_PUBLIC_API_URL + source.photo_profile.data.attributes.formats.large.url
     const imgBlurUrl = source.photo_profile.data.attributes.placeholder
 
     useEffect(() => {

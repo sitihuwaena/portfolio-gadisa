@@ -51,7 +51,7 @@ export default async function ProjectDetail({ params }: { params: { slug: string
                     <div className="w-full relative grid h-[24rem] grid-cols-1 lg:grid-cols-3 gap-6">
                         <div className="relative h-[12rem] md:h-[24rem] w-full bg-white lg:col-span-2 drop-shadow-md rounded-lg overflow-hidden">
                             <Image className="w-full h-full object-contain md:object-cover" layout="fill" 
-                            src={baseURL + thumbnail.url}
+                            src={baseURL + thumbnail.formats.large.url}
                             placeholder="blur"
                             blurDataURL={thumbnail.placeholder}
                             alt={data.attributes.title} />

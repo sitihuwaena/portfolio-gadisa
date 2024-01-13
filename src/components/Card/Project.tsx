@@ -29,7 +29,7 @@ export default function CardProject({ title, subtitle, livePreview, thumbnail, p
         <div onClick={click} className="bg-white transition-all hover:opacity-70 cursor-pointer overflow-hidden rounded-xl drop-shadow-xl h-[26rem] w-full">
             <div className="w-full bg-gray-100 h-[12rem] relative">
                 <Image alt="link" layout="fill" objectFit="cover" className="w-full h-full object-contain"
-                    src={baseURL + thumbnail.url}
+                    src={baseURL + thumbnail.formats.large.url}
                     placeholder="blur"
                     blurDataURL={thumbnail.placeholder}
                 />
