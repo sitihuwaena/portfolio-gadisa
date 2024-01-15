@@ -19,6 +19,14 @@ export async function generateMetadata(): Promise<Metadata> {
   })
 
   return {
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true
+      }
+    },
     title: data.attributes.meta.title,
     description: data.attributes.meta.meta_description,
     twitter: {
