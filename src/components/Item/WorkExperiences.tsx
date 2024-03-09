@@ -2,7 +2,11 @@
 
 import { Responsibilities } from "@/types/experienceTypes.interface";
 import dayjs from "dayjs";
+import "dayjs/locale/en";
+import "dayjs/locale/id";
+
 import Image from "next/image";
+import { useParams } from "next/navigation";
 
 export default function ItemWorkExperiences({ title, company, typeWorking, startDate, endDate, location, responsibilities }: {
     title?: string,
@@ -13,6 +17,8 @@ export default function ItemWorkExperiences({ title, company, typeWorking, start
     location?: string,
     responsibilities?: Array<Responsibilities>
 }) {
+
+    const param = useParams()
 
     return (
         <div className="w-full border-b-2 pb-4 pt-2 space-y-2">
@@ -52,7 +58,7 @@ export default function ItemWorkExperiences({ title, company, typeWorking, start
                         <Image alt="date" src={require("@/assets/icons/date.svg")} className="w-full h-full" />
                     </div>
                     <div className="text-gray-500 text-sm">
-                        {dayjs(startDate).format("MMMM YYYY")} - {dayjs(endDate).format("MMMM YYYY")}
+                        {dayjs(startDate).locale(param.locale as string).format("MMMM YYYY")} - {dayjs(endDate).locale(param.locale as string).format("MMMM YYYY")}
                     </div>
                 </div>
             </div>
@@ -60,7 +66,7 @@ export default function ItemWorkExperiences({ title, company, typeWorking, start
                 responsibilities && responsibilities.length > 0 && (
                     <>
                         <div className="px-1 text-gray-500 font-semibold text-sm">
-                            Responsibilities :
+                            {param.locale == "id" ? "Tanggung Jawab" : "Responsibilities"} :
                         </div>
                         <ul className="list-disc px-5 text-gray-500 text-sm">
                             {

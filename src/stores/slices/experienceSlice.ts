@@ -17,11 +17,11 @@ const experienceSlice = createSlice({
     }
 })
 
-export const getExperiences = createAsyncThunk<any, void, { dispatch: AppDispatch }>(
+export const getExperiences = createAsyncThunk<any, string, { dispatch: AppDispatch }>(
     "experience/api",
-    async (_, { dispatch }) => {
+    async (locale, { dispatch }) => {
         dispatch(setLoading(true))
-        return axios.get("/api/experiences?sort=from:desc").then(({ data }) => {
+        return axios.get(`/api/experiences?sort=from:desc${locale == 'id' ? "&locale="+ locale: ""}`).then(({ data }) => {
             dispatch(setExperiences({
                 source: data.data
             }))

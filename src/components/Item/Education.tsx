@@ -1,7 +1,11 @@
 "use client"
 
 import dayjs from "dayjs";
+import "dayjs/locale/en";
+import "dayjs/locale/id";
+
 import Image from "next/image";
+import { useParams } from "next/navigation";
 
 export default function ItemEducation({ department, typeEducation, university, startDate, endDate }: {
     department?: string,
@@ -10,6 +14,8 @@ export default function ItemEducation({ department, typeEducation, university, s
     startDate?: string,
     endDate?: string
 }) {
+
+    const param = useParams()
 
     return (
         <div className="w-full border-b-2 pb-4 pt-2 space-y-2">
@@ -38,7 +44,7 @@ export default function ItemEducation({ department, typeEducation, university, s
                         <Image width={24} height={24} alt="date" src={require("@/assets/icons/date.svg")} className="w-full h-full" />
                     </div>
                     <div className="text-gray-500 text-xs">
-                        {dayjs(startDate).format("MMMM YYYY")} - {dayjs(endDate).format("MMMM YYYY")}
+                        {dayjs(startDate).locale(param.locale as string).format("MMMM YYYY")} - {dayjs(endDate).locale(param.locale as string).format("MMMM YYYY")}
                     </div>
                 </div>
             </div>

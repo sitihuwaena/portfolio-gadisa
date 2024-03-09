@@ -17,11 +17,11 @@ const educationSlice = createSlice({
     }
 })
 
-export const getEducations = createAsyncThunk<any, void, { dispatch: AppDispatch }>(
+export const getEducations = createAsyncThunk<any, string, { dispatch: AppDispatch }>(
     "education/api",
-    async (_, { dispatch }) => {
+    async (locale, { dispatch }) => {
         dispatch(setLoading(true))
-        return axios.get("/api/educations?sort=from:desc").then(({ data }) => {
+        return axios.get(`/api/educations?sort=from:desc${locale == 'id' ? "&locale="+ locale: ""}`).then(({ data }) => {
             dispatch(setEducations({
                 source: data.data
             }))

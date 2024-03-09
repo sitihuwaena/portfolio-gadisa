@@ -10,8 +10,8 @@ axios.interceptors.request.use(async (config) => {
     // const session = await getSession()
     // const user = session?.user as any
 
-    config.headers["access-control-allow-origin"] = "*";
-    config.headers["access-control-allow-methods"] = "*";
+    // config.headers["access-control-allow-origin"] = "*";
+    // config.headers["access-control-allow-methods"] = "*";
 
     // user?.token && (config.headers["Authorization"] = `Bearer ${user?.token}`)
 

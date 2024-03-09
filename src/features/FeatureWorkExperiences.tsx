@@ -3,20 +3,23 @@
 import ItemWorkExperiences from "@/components/Item/WorkExperiences"
 import { useAppDispatch, useAppSelector } from "@/stores/hooks"
 import { getExperiences } from "@/stores/slices/experienceSlice"
+import { useParams } from "next/navigation"
 import { useEffect } from "react"
 
 export default function FeatureWorkExperiences() {
     const experiences = useAppSelector(state => state.experience)
     const dispatch = useAppDispatch()
+    const param = useParams()
+
     
     useEffect(() => {
-        dispatch(getExperiences())
+        dispatch(getExperiences(param.locale as string))
     }, [])
 
     return (
         <div className="space-y-2 md:space-y-4">
             <h2 className="text-2xl md:text-3xl font-semibold">
-                Work Experience
+                {param.locale == "id" ? "Pengalaman Kerja": "Work Experience"}
             </h2>
             <div className="space-y-4">
                 {

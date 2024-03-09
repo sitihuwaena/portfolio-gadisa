@@ -3,20 +3,23 @@
 import ItemEducation from "@/components/Item/Education";
 import { useAppDispatch, useAppSelector } from "@/stores/hooks";
 import { getEducations } from "@/stores/slices/educationSlice";
+import { useParams } from "next/navigation";
 import { useEffect } from "react";
 
 export default function FeatureEducation() {
     const educations = useAppSelector(state => state.education)
     const dispatch = useAppDispatch()
-    
+    const param = useParams()
+
+
     useEffect(() => {
-        dispatch(getEducations())
+        dispatch(getEducations(param.locale as string))
     }, [])
 
     return (
         <div className="space-y-2 md:space-y-4">
             <h2 className="text-2xl md:text-3xl font-semibold">
-                Education
+                {param.locale == "id" ? "Pendidikan" : "Education"}
             </h2>
             <div className="space-y-4">
                 {
