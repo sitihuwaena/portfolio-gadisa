@@ -4,8 +4,14 @@ import useTechStackPage from "@/hooks/useTechStackPage"
 import { Metadata } from "next"
 import Head from "next/head"
 
-export async function generateMetadata(): Promise<Metadata> {
-    const { data } = await useTechStackPage()
+interface Params {
+    params: {
+        locale: string
+    }
+}
+
+export async function generateMetadata({ params: { locale } }: Params): Promise<Metadata> {
+    const { data } = await useTechStackPage(locale)
     const images = data.attributes.meta.meta_image.data.attributes.formats
 
     const newImages = Object.values(images).map((item: any) => {
@@ -33,8 +39,8 @@ export async function generateMetadata(): Promise<Metadata> {
     }
 }
 
-export default async function TechStack() {
-    const { data } = await useTechStackPage()
+export default async function TechStack({ params: { locale } }: Params) {
+    const { data } = await useTechStackPage(locale)
 
     return (
         <>

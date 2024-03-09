@@ -1,6 +1,6 @@
 import axios from "@/libraries/axios"
 
-export default async function useTechStackPage() {
-    const data = await axios.get("/api/tech-stack-page")
-    return data.data
+export default async function useTechStackPage(locale: string) {
+    const { data } = await axios.get(`/api/tech-stack-page${locale ? "?locale=" + locale : ""}`)
+    return data
 }
