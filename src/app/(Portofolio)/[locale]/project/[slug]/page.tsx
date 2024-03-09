@@ -20,6 +20,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
     return {
         title: data.attributes.meta.title,
+        keywords: data.attributes.meta.keyword,
         description: data.attributes.meta.meta_description,
         twitter: {
             title: data.attributes.meta.title,

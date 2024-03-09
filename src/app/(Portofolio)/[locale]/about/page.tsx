@@ -28,6 +28,7 @@ export async function generateMetadata({ params: { locale } }: Params): Promise<
     return {
         title: data.attributes.meta.title,
         description: data.attributes.meta.meta_description,
+        keywords: data.attributes.meta.keyword,
         twitter: {
             title: data.attributes.meta.title,
             description: data.attributes.meta.meta_description,

@@ -28,6 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
       }
     },
     title: data.attributes.meta.title,
+    keywords: data.attributes.meta.keyword,
     description: data.attributes.meta.meta_description,
     twitter: {
       title: data.attributes.meta.title,
@@ -49,8 +50,8 @@ export default async function Home() {
     <>
       <Head>
         <meta property="og:image" itemProp="image" content={baseURL + data.attributes.meta.meta_image.data.attributes.formats.thumbnail.url} />
-        <meta property="og:image:width" content="256"/>
-        <meta property="og:image:height" content="256"/>
+        <meta property="og:image:width" content="256" />
+        <meta property="og:image:height" content="256" />
       </Head>
       {
         data.attributes.blocks.map((item: any, i: any) => {
