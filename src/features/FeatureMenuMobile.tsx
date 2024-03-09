@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import { useEffect } from "react";
 
 export default function FeatureMenuMobile({ menu, clicked }: {
@@ -11,6 +11,15 @@ export default function FeatureMenuMobile({ menu, clicked }: {
 }) {
 
     const path = usePathname()
+    const param = useParams()
+
+    function activeLink(link: string) {
+        if (param.locale == "id") {
+            return path.startsWith("/id" + link)
+        } else {
+            return path.startsWith(link)
+        }
+    }
 
     useEffect(() => {
         document.body.style.overflow = 'hidden';
@@ -45,11 +54,11 @@ export default function FeatureMenuMobile({ menu, clicked }: {
             <div className="fixed z-30 overflow-hidden h-full w-full bg-white px-8 lg:px-16">
                 <div className="flex flex-col overflow-y-auto relative space-y-12 h-full w-full text-lg py-16">
                     <Link onClick={() => samePage("/")} href={"/"} className={`font-semibold text-2xl bg-clip-text bg-gradient-to-r from-primary to-secondary hover:opacity-80 cursor-pointer transition-all ${path == "/" ? "text-transparent" : "text-gray-400"}`}>
-                        Home
+                        {param.locale == "id" ? "Beranda" : "Home"}
                     </Link>
                     {
                         menu.length > 0 && menu.map((item, i) => (
-                            <Link onClick={() => samePage(item.link)} key={i} href={item.link} className={`font-semibold text-2xl bg-clip-text bg-gradient-to-r from-primary to-secondary hover:opacity-80 cursor-pointer transition-all ${path.startsWith(item.link) ? "text-transparent" : "text-gray-400"}`}>
+                            <Link onClick={() => samePage(item.link)} key={i} href={item.link} className={`font-semibold text-2xl bg-clip-text bg-gradient-to-r from-primary to-secondary hover:opacity-80 cursor-pointer transition-all ${activeLink(item.link) ? "text-transparent" : "text-gray-400"}`}>
                                 {item.name}
                             </Link>
                         ))

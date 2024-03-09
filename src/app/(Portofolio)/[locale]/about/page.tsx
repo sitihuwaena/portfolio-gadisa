@@ -6,8 +6,15 @@ import useAboutPage from "@/hooks/useAboutPage"
 import { Metadata } from "next"
 import Head from "next/head"
 
-export async function generateMetadata(): Promise<Metadata> {
-    const { data } = await useAboutPage()
+
+interface Params {
+    params: {
+        locale: string
+    }
+}
+
+export async function generateMetadata({ params: { locale } }: Params): Promise<Metadata> {
+    const { data } = await useAboutPage(locale)
     const images = data.attributes.meta.meta_image.data.attributes.formats
 
     const newImages = Object.values(images).map((item: any) => {
@@ -34,8 +41,8 @@ export async function generateMetadata(): Promise<Metadata> {
     }
 }
 
-export default async function About() {
-    const { data } = await useAboutPage()
+export default async function About({ params: { locale } }: Params) {
+    const { data } = await useAboutPage(locale)
 
     return (
         <>
