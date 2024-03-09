@@ -62,7 +62,7 @@ export default function FeatureFooter() {
 
     return (
         <footer className="w-full bg-gray-100 font-poppins">
-            <div className="container mx-auto space-y-2 py-6 px-8 md:px-16">
+            <div className="container mx-auto space-y-2 py-6 px-4 md:px-16">
                 <div className="w-full flex justify-between items-center">
                     <div className="w-full text-sm">
                         🅒 {year()} All right reserved.

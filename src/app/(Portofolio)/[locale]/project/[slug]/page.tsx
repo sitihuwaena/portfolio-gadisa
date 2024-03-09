@@ -51,8 +51,8 @@ export default async function ProjectDetail({ params }: Params) {
     const thumbnail = data.attributes.thumbnail.data.attributes
 
     return (
-        <section className="relative w-full py-10">
-            <div className="container relative mx-auto font-poppins px-6 space-y-8 md:px-16">
+        <section className="relative w-full py-4">
+            <div className="container relative mx-auto font-poppins px-4 space-y-6 md:px-16">
                 <div className="w-full relative grid grid-cols-1 lg:grid-cols-3 gap-6">
                     <div className="relative h-[14rem] md:h-[28rem] w-full bg-white lg:col-span-2 drop-shadow-md rounded-lg overflow-hidden">
                         <Image className="w-full h-full object-cover" layout="fill"
@@ -154,7 +154,7 @@ export default async function ProjectDetail({ params }: Params) {
                         </div>
                     </div>
                 </div>
-                <div className="space-y-4 relative lg:py-0">
+                <div className="space-y-4 px-2 relative lg:py-0">
                     <div className="space-y-1">
                         <h2 className="text-xl md:text-2xl font-poppins-semi-bold text-gray-600">
                             {data.attributes.title}

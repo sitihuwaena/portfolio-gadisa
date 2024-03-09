@@ -58,7 +58,7 @@ export default function FeatureHero({ source }: {
                             </h2>
                             <div className="flex space-x-2 md:space-x-4 whitespace-nowrap max-w-xl">
                                 <span>
-                                    {param.locale == "id" ? "Saya bisa membuat" : "I build things for"}
+                                    {param.locale == "id" ? "Saya pembuat" : "I build things for"}
                                 </span>
                                 <span className="w-36">
                                     <AnimatePresence>

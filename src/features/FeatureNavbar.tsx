@@ -50,7 +50,7 @@ export default function FeatureNavbar() {
 
     return (
         <BaseNavbar>
-            <div className="w-full flex justify-between items-center font-poppins px-8 lg:px-16">
+            <div className="w-full flex justify-between items-center font-poppins px-4 lg:px-16">
                 <Link href="/">
                     <Image src={require("@/assets/icons/logo.svg")} alt="af2.tech" />
                 </Link>
