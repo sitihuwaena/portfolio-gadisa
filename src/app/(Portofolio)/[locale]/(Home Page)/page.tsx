@@ -6,8 +6,14 @@ import useHomePage from "@/hooks/useHomePage";
 import { Metadata } from "next";
 import Head from "next/head";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const { data } = await useHomePage()
+interface Params {
+  params: {
+    locale: string
+  }
+}
+
+export async function generateMetadata({ params: { locale } }: Params): Promise<Metadata> {
+  const { data } = await useHomePage(locale)
   const images = data.attributes.meta.meta_image.data.attributes.formats
 
   const newImages = Object.values(images).map((item: any) => {
@@ -43,8 +49,8 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default async function Home() {
-  const { data } = await useHomePage()
+export default async function Home({ params: { locale } }: Params) {
+  const { data } = await useHomePage(locale)
 
   return (
     <>

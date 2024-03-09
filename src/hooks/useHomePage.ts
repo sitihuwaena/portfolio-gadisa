@@ -1,6 +1,6 @@
 import axios from "@/libraries/axios"
 
-export default async function useHomePage() {
-    const data = await axios.get("/api/home-page")
-    return data.data
+export default async function useHomePage(locale: string) {
+    const { data } = await axios.get(`/api/home-page${locale ? "?locale=" + locale : ""}`)
+    return data
 }

@@ -2,28 +2,31 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import { useParams } from "next/navigation"
 
 export default function FeatureFooter() {
 
+    const param = useParams()
+
     const menu = [
         {
-            name: "Home",
+            name: param.locale == "id" ? "Beranda" : "Home",
             link: "/"
         },
         {
-            name: "About",
+            name: param.locale == "id" ? "Tentang Saya" : "About",
             link: "/about"
         },
         {
-            name: "Tech Stack",
+            name: param.locale == "id" ? "Teknologi" : "Tech Stack",
             link: "/tech-stack"
         },
         {
-            name: "Projects",
+            name: param.locale == "id" ? "Projek" : "Projects",
             link: "/project"
         },
         {
-            name: "Contact",
+            name: param.locale == "id" ? "Kontak" : "Contact",
             link: "/contact"
         }
     ]
@@ -83,7 +86,7 @@ export default function FeatureFooter() {
                         }
                     </div>
                     <div className="text-gray-600 text-sm">
-                        Designed and built by Choirul Affan with Hot Tea & Fried Tempe 🤤
+                        {param.locale == "id" ? "Didesain dan dibuat oleh Choirul Affan dengan Teh Panas & Tempe Goreng 🤤" : "Designed and built by Choirul Affan with Hot Tea & Fried Tempe 🤤"}
                     </div>
                 </div>
             </div>

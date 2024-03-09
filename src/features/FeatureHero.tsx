@@ -3,18 +3,22 @@
 import ButtonSolid from "@/components/Button/Solid";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
+import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function FeatureHero({ source }: {
     source: any
 }) {
+
+    const param = useParams()
+
     const text = [
         "web",
         "apps"
     ]
     const [renderText, setRenderText] = useState(true)
     const [currentPointer, setCurrentPointer] = useState(0)
-    const fullPath = process.env.NEXT_PUBLIC_API_URL + source.photo_profile.data.attributes.formats.large.url
+    const fullPath = process.env.NEXT_PUBLIC_API_URL + source.photo_profile.data.attributes.formats.medium.url
     const imgBlurUrl = source.photo_profile.data.attributes.placeholder
 
     useEffect(() => {
@@ -47,13 +51,15 @@ export default function FeatureHero({ source }: {
                 <div className="flex flex-col-reverse md:flex-row justify-end pt-[8vh] md:pt-0 md:justify-around w-full md:space-x-8">
                     <div className="flex flex-col justify-center md:px-8 font-poppins">
                         <div className="text-3xl md:text-4xl lg:text-5xl flex flex-col space-y-2 font-poppins-bold max-w-2xl">
-                            <div>Hi 👋 </div>
-                            <div>My name is</div>
+                            <div>{param.locale == "id" ? "Hallo" : "Hi"} 👋 </div>
+                            <div>{param.locale == "id" ? "Nama saya" : "My name is"}</div>
                             <h2 className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
                                 {source.name}
                             </h2>
                             <div className="flex space-x-2 md:space-x-4 whitespace-nowrap max-w-xl">
-                                <span>I build things for</span>
+                                <span>
+                                    {param.locale == "id" ? "Saya bisa membuat" : "I build things for"}
+                                </span>
                                 <span className="w-36">
                                     <AnimatePresence>
                                         {
