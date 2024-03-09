@@ -6,7 +6,6 @@ import useAboutPage from "@/hooks/useAboutPage"
 import { Metadata } from "next"
 import Head from "next/head"
 
-
 interface Params {
     params: {
         locale: string

@@ -3,8 +3,14 @@ import useContactPage from "@/hooks/useContactPage"
 import { Metadata } from "next"
 import Head from "next/head"
 
-export async function generateMetadata(): Promise<Metadata> {
-    const { data } = await useContactPage()
+interface Params {
+    params: {
+        locale: string
+    }
+}
+
+export async function generateMetadata({ params: { locale } }: Params): Promise<Metadata> {
+    const { data } = await useContactPage(locale)
     const images = data.attributes.meta.meta_image.data.attributes.formats
 
     const newImages = Object.values(images).map((item: any) => {
@@ -32,8 +38,8 @@ export async function generateMetadata(): Promise<Metadata> {
     }
 }
 
-export default async function Contact() {
-    const { data } = await useContactPage()
+export default async function Contact({ params: { locale } }: Params) {
+    const { data } = await useContactPage(locale)
 
     return (
         <>
@@ -45,7 +51,9 @@ export default async function Contact() {
             <section className="w-full py-16">
                 <div className="container mx-auto font-poppins px-6 md:px-16">
                     <div className="w-full h-[60vh] md:space-y-4 flex flex-col items-center justify-center">
-                        <h2 className="text-2xl text-center md:text-5xl font-bold text-gray-800">For any questions please mail us:</h2>
+                        <h2 className="text-2xl text-center md:text-5xl font-bold text-gray-800">
+                            {locale == "id" ? "Untuk pertanyaan apapun, silakan kirimkan email kepada kami:" : "For any questions please mail us:"}
+                        </h2>
                         <p className="text-2xl md:text-5xl text-center py-2 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary font-semibold">
                             {data.attributes.email}
                         </p>
