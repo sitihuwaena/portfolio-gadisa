@@ -4,5 +4,5 @@ module.exports = {
     env: {
         "NODE_ENV": "production",
     },
-    interpreter: 'bun'
+    // interpreter: 'bun'
 }
