@@ -2,7 +2,6 @@ import { baseURL } from "@/constant/baseUrl";
 import FeatureListProject from "@/features/FeatureListProject";
 import useProjectPage from "@/hooks/useProjectPage";
 import { Metadata } from "next";
-import Head from "next/head";
 
 export async function generateMetadata(): Promise<Metadata> {
     const { data } = await useProjectPage()
@@ -38,13 +37,8 @@ export default async function Project() {
 
     return (
         <>
-            <Head>
-                <meta property="og:image" itemProp="image" content={baseURL + data.attributes.meta.meta_image.data.attributes.formats.thumbnail.url} />
-        <meta property="og:image:width" content="256"/>
-        <meta property="og:image:height" content="256"/>
-            </Head>
             <section className="w-full py-10">
-                <div className="container mx-auto font-poppins px-6 md:px-16">
+                <div className="container mx-auto font-poppins px-5 md:px-16">
                     <div className="space-y-12">
                         <div className="space-y-4">
                             <h2 className="text-2xl md:text-3xl font-poppins-semi-bold text-gray-600 text-center">

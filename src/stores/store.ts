@@ -4,6 +4,7 @@ import experienceSlice from "./slices/experienceSlice";
 import educationSlice from "./slices/educationSlice";
 import skillSlice from "./slices/skillSlice";
 import projectSlice from "./slices/projectSlice";
+import resumeSlice from "./slices/resumeSlice";
 
 
 export const store = configureStore({
@@ -11,7 +12,8 @@ export const store = configureStore({
         experience: experienceSlice,
         education: educationSlice,
         skill: skillSlice,
-        project: projectSlice
+        project: projectSlice,
+        resume: resumeSlice
     }
 })
 

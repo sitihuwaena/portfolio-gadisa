@@ -54,11 +54,6 @@ export default async function Home({ params: { locale } }: Params) {
 
   return (
     <>
-      <Head>
-        <meta property="og:image" itemProp="image" content={baseURL + data.attributes.meta.meta_image.data.attributes.formats.thumbnail.url} />
-        <meta property="og:image:width" content="256" />
-        <meta property="og:image:height" content="256" />
-      </Head>
       {
         data.attributes.blocks.map((item: any, i: any) => {
           if (item.__component == "section.hero") return <FeatureHero source={item} key={i} />

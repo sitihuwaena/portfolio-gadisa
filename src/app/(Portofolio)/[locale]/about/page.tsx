@@ -4,7 +4,6 @@ import FeatureEducation from "@/features/FeatureEducation"
 import FeatureWorkExperiences from "@/features/FeatureWorkExperiences"
 import useAboutPage from "@/hooks/useAboutPage"
 import { Metadata } from "next"
-import Head from "next/head"
 
 interface Params {
     params: {
@@ -46,13 +45,8 @@ export default async function About({ params: { locale } }: Params) {
 
     return (
         <>
-            <Head>
-                <meta property="og:image" itemProp="image" content={baseURL + data.attributes.meta.meta_image.data.attributes.formats.thumbnail.url} />
-                <meta property="og:image:width" content="256" />
-                <meta property="og:image:height" content="256" />
-            </Head>
             <section className="w-full py-10">
-                <div className="container mx-auto font-poppins px-6 md:px-16">
+                <div className="container mx-auto font-poppins px-5 md:px-16">
                     <div className="max-w-2xl space-y-16">
                         <FeatureAboutMe source={data.attributes} />
                         <FeatureWorkExperiences />
