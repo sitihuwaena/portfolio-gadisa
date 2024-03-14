@@ -17,7 +17,9 @@ const resumeSlice = createSlice({
             state.loading = false
         },
         resetResume(state) {
-            state = InitialResume
+            state.error = InitialResume.error
+            state.loading = InitialResume.loading
+            state.message = InitialResume.message
         }
     }
 })
@@ -27,17 +29,17 @@ export const getResume = createAsyncThunk<any, any, { dispatch: AppDispatch }>(
     async (payload, { dispatch }) => {
         dispatch(setLoading(true))
         return axios.post("/api/email-viewer/request-resume", payload).then(({ data }) => {
-            setResume({
+            dispatch(setResume({
                 error: false,
                 message: data.message
-            })
+            }))
         }).catch((error) => {
-            setResume({
+            dispatch(setResume({
                 error: true,
                 message: error.response?.data?.message
-            })
+            }))
         }).finally(() => {
-            setLoading(false)
+            dispatch(setLoading(false))
         })
     }
 )

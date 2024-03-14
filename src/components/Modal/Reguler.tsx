@@ -70,7 +70,7 @@ export default function ModalReguler({ children, disableSubmit = false, title, c
                         {
                             buttonClose && (<ButtonSolid className="text-sm bg-danger text-white w-full sm:w-20" text="Close" click={close} />)
                         }
-                        <ButtonSolid disable={disableSubmit} className="text-sm bg-info text-white w-full hover:bg-primary" text="Submit" click={() => (submit && submit())} />
+                        <ButtonSolid loading={disableSubmit} disable={disableSubmit} className="text-sm bg-info rounded-lg text-white w-full" text="Submit" click={() => (submit && submit())} />
                     </div>
                 </div>
             </motion.div>

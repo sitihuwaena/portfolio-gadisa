@@ -7,5 +7,6 @@ export interface Resume {
 
 export const InitialResume: Resume = {
     loading: false,
-    error: false
+    error: false,
+    message: ""
 }

@@ -3,7 +3,7 @@
 import InputText from "@/components/Input/text";
 import ModalReguler from "@/components/Modal/Reguler";
 import { useAppDispatch, useAppSelector } from "@/stores/hooks";
-import { getResume } from "@/stores/slices/resumeSlice";
+import { getResume, resetResume } from "@/stores/slices/resumeSlice";
 import { useEffect, useState } from "react";
 
 export default function FeatureModalResume({
@@ -16,6 +16,10 @@ export default function FeatureModalResume({
     const dispatch = useAppDispatch()
     const [form, setForm] = useState<any>(null)
     const resume = useAppSelector((state) => state.resume)
+
+    useEffect(() => {
+        dispatch(resetResume())
+    }, [])
 
     function handleChange(e: any) {
         setForm({
