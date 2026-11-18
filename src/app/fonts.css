@@ -1,0 +1,48 @@
+/* DM Sans */
+@font-face {
+    font-family: 'DMSans';
+    font-style: normal;
+    src: url('../assets/fonts/dm-sans/DMSans_Regular.ttf');
+}
+
+@font-face {
+    font-family: 'DMSans_Italic';
+    font-style: italic;
+    src: url('../assets/fonts/dm-sans/DMSans_Italic.ttf');
+}
+
+@font-face {
+    font-family: 'DMSans_Bold';
+    font-style: normal;
+    src: url('../assets/fonts/dm-sans/DMSans_Bold.ttf');
+}
+
+@font-face {
+    font-family: 'DMSans_SemiBold';
+    font-style: normal;
+    src: url('../assets/fonts/dm-sans/DMSans_SemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'DMSans_ExtraBold';
+    font-style: normal;
+    src: url('../assets/fonts/dm-sans/DMSans_ExtraBold.ttf');
+}
+
+@font-face {
+    font-family: 'DMSans_Light';
+    font-style: normal;
+    src: url('../assets/fonts/dm-sans/DMSans_Light.ttf');
+}
+
+@font-face {
+    font-family: 'DMSans_ExtraLight';
+    font-style: normal;
+    src: url('../assets/fonts/dm-sans/DMSans_ExtraLight.ttf');
+}
+
+@font-face {
+    font-family: 'DMSans_Medium';
+    font-style: normal;
+    src: url('../assets/fonts/dm-sans/DMSans_Medium.ttf');
+}

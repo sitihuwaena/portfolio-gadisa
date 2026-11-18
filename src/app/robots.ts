@@ -1,4 +1,4 @@
-import { urlSite } from "@/constant/urlSite";
+import { urlSite } from "@/constant/siteUrl"
 import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {

@@ -1,0 +1,16 @@
+export const API_URL = {
+    home: "/api/home-page",
+    about: "/api/about-page",
+    project: "/api/project-page",
+    techStack: "/api/tech-stack",
+    reachMe: "/api/contact-page",
+    skills: "/api/skills",
+    projects: "/api/projects",
+    blog: "/api/blog",
+    education: "/api/educations",
+    experiences: "/api/experiences",
+    organizations: "/api/organizationals",
+    categoryProject: "/api/category-projects",
+    email: "/api/email-viewer/reach-me",
+    ideas: "/api/ideas1",
+}

@@ -50,17 +50,35 @@ export default function FeatureMenuMobile({ menu, clicked }: {
                 top: -100,
                 opacity: 0,
             }}
-            className="w-full pt-[1.5rem] h-[calc(100vh-10rem)] font-poppins">
-            <div className="fixed z-30 overflow-hidden h-full w-full bg-white px-8 lg:px-16">
-                <div className="flex flex-col overflow-y-auto relative space-y-12 h-full w-full text-lg py-16">
-                    <Link onClick={() => samePage("/")} href={"/"} className={`font-semibold text-2xl bg-clip-text bg-gradient-to-r from-primary to-secondary hover:opacity-80 cursor-pointer transition-all ${path == "/" ? "text-transparent" : "text-gray-400"}`}>
-                        {param.locale == "id" ? "Beranda" : "Home"}
-                    </Link>
+            className="w-full h-[100vh] bg-background-blue font-dm-sans">
+            <div className="fixed z-30 overflow-hidden h-full w-full px-8 lg:px-16">
+                <div className="flex flex-col justify-start items-start overflow-y-auto relative bg-transparent font-dm-sans-medium space-y-12 h-full w-full text-lg py-16">
+                    <div className="space-y-1 text-2xl flex flex-col">
+                        <Link className={`text-texting`} href={"/"} >
+                            {param.locale == "id" ? "Beranda" : "Home"}
+                        </Link>
+                        {
+                            path == "/" ? (
+                                <div className="h-1 w-full bg-primary rounded-full" />
+                            ) : (
+                                <div className="h-1 w-full" />
+                            )
+                        }
+                    </div>
                     {
                         menu.length > 0 && menu.map((item, i) => (
-                            <Link onClick={() => samePage(item.link)} key={i} href={item.link} className={`font-semibold text-2xl bg-clip-text bg-gradient-to-r from-primary to-secondary hover:opacity-80 cursor-pointer transition-all ${activeLink(item.link) ? "text-transparent" : "text-gray-400"}`}>
-                                {item.name}
-                            </Link>
+                            <div onClick={() => samePage(item.link)} key={i} className="space-y-1 flex flex-col items-start justify-start">
+                                <Link className={`text-texting text-2xl`} href={item.link} >
+                                    {item.name}
+                                </Link>
+                                {
+                                    activeLink(item.link) ? (
+                                        <div className="h-1 w-full bg-primary rounded-full" />
+                                    ) : (
+                                        <div className="h-1 w-full" />
+                                    )
+                                }
+                            </div>
                         ))
                     }
                 </div>

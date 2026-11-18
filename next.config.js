@@ -4,7 +4,13 @@ const nextConfig = {
         remotePatterns: [
           {
             protocol: 'https',
-            hostname: 'strapi.choirulaffan.dev',
+            hostname: 'strapi.gadisamaulidiah.my.id',
+            port: '',
+            pathname: '/uploads/**',
+          },
+          {
+            protocol: 'https',
+            hostname: 'strapi-dev.gadisamaulidiah.my.id',
             port: '',
             pathname: '/uploads/**',
           },

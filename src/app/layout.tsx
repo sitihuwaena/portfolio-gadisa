@@ -1,46 +1,40 @@
-import { Providers } from '@/stores/provider'
-import './globals.css'
-import './font.css'
-import type { Metadata } from 'next'
-import { baseURL } from '@/constant/baseUrl'
-import { myName } from '@/constant/myName'
-import { urlSite } from '@/constant/urlSite'
+import type { Metadata } from "next";
+import "./globals.css";
+import "./fonts.css";
+import Providers from "./provider";
+import FeatureNavbar from "@/features/FeatureNavbar";
+import Footer from "@/components/base/Footer";
+import FloatingHireMe from "@/components/base/FloatingHireMe";
+
 
 export const metadata: Metadata = {
-  metadataBase: new URL(baseURL),
-  robots: {
-    index: true,
-    follow: true,
-    nocache: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
+  title: "Siti Huwaena",
+  description: "A passionate developer with experience in building web applications and digital platforms.",
+  openGraph: {
+    title: "Siti Huwaena",
+    description: "A passionate developer with experience in building web applications and digital platforms.",
+    url: "https://gadisamaulidiah.my.id",
+    siteName: "Siti Huwaena",
+    locale: "en-US",
+    type: "website",
   },
-  authors: {
-    name: myName,
-    url: urlSite
-  },
-  creator: myName,
-  publisher: myName
-}
+};
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode
-}) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`font-dm-sans antialiased`}>
         <Providers>
+          <FeatureNavbar />
           {children}
         </Providers>
+        <Footer />
+        <FloatingHireMe />
       </body>
     </html>
-  )
+  );
 }
