@@ -38,6 +38,7 @@ export default async function Home() {
   const projects = await useProjects({
     params: {
       "pagination[pageSize]": 3,
+      "filters[featured][$eq]": true,
       "sort": "endDate:desc"
     }
   });
