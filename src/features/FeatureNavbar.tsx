@@ -1,6 +1,6 @@
 "use client"
 
-import BaseNavbar from "@/components/base/Navbar";
+import BaseNavbar from "@/components/Base/Navbar";
 import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
