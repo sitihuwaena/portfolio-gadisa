@@ -1,8 +1,15 @@
 
 import _axios from "axios";
 
+// In the browser, API requests go through the website's own /strapi-api path,
+// which Next.js rewrites to Strapi. The browser then only talks to the same
+// origin, so Strapi's CORS allow-list is not involved. On the server, requests
+// call Strapi directly because relative URLs do not work there.
+const isServer = typeof window === "undefined";
+const apiUrl = process.env.NEXT_PUBLIC_RELEASE_STAGE == "production" ? process.env.NEXT_PUBLIC_API_URL_PRODUCTION : process.env.NEXT_PUBLIC_API_URL_DEVELOPMENT;
+
 const axios = _axios.create({
-    baseURL: process.env.NEXT_PUBLIC_RELEASE_STAGE == "production" ? process.env.NEXT_PUBLIC_API_URL_PRODUCTION : process.env.NEXT_PUBLIC_API_URL_DEVELOPMENT,
+    baseURL: isServer ? apiUrl : "/strapi-api",
     withCredentials: false,
     headers: {
         "Content-Type": "application/json",
