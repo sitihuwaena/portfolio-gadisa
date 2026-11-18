@@ -3,8 +3,8 @@ import "./globals.css";
 import "./fonts.css";
 import Providers from "./provider";
 import FeatureNavbar from "@/features/FeatureNavbar";
-import Footer from "@/components/base/Footer";
-import FloatingHireMe from "@/components/base/FloatingHireMe";
+import Footer from "@/components/Base/Footer";
+import FloatingHireMe from "@/components/Base/FloatingHireMe";
 
 
 export const metadata: Metadata = {
